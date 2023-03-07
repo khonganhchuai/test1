@@ -1,10 +1,9 @@
-displayName = 'instance-20230216-2215'
+displayName = 'instance-20230308-0629'
 compartmentId = 'ocid1.tenancy.oc1..aaaaaaaaay7xezr737sf65slkedhnm3rwrzzbgsvr6pz34ro65ztqgtfr5lq'
 availabilityDomain = "erAN:AP-SINGAPORE-1-AD-1"
-imageId = "ocid1.image.oc1.ap-singapore-1.aaaaaaaae72s23dpj5buuwjaxu3svt5ookea7jr5f37vofhfv3atqenfnria"
+imageId = "ocid1.image.oc1.ap-singapore-1.aaaaaaaaznrxmsdoqubnze6hx4ve4ujts227tfeqvzrmx4nrksvsaqst272a"
 subnetId = 'ocid1.subnet.oc1.ap-singapore-1.aaaaaaaaxlfyd3lkgbaad7sxfwag2pueqytncwq6oru5ok7on32mb7n4czta'
-ssh_authorized_keys = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHnS8h1pfoNq4xT1Q9Ck1wtGq4Nsvy7nqk6fBjXeGLnVNpNqFwrlsDBRN8AGaItWSAM3cvO9+DaJ9iqjr1mEnhYweRpc7V4bPj9fydZ8G2xKeJtFRHwCaNQfjbDVtGQ5eSrYTxUu8uAEj50nY+lgnVDMXbKcy013D4n1AUVUUjJLlQgnqH44qXx3oNFkCMw3S3UeGN6jJxqeULkws9KryAaxANvV+p8cnP47mMjxyK9LLr+Jl/BpJNaez5WVLrWCXyujN2rWqjOn+P1qVhrnFLda5+Rlp+59hoGHHed+hO8z++74AnEIj+SXVZhk545HCdgEaK7aBSILDmXemH3KHJ ssh-key-2023-02-16"
-
+ssh_authorized_keys = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkfWNYTnQ8ANQxvZdXYPddaA/tF3y5xvwRHdG8VxclYD6A+ON0uVfrbw+AJPc2km3C6841CullKfUDVpOxOT7jSi7qT7TyoW+0lK+VO9XbzGc5IQdL2Jst2rMF6v1/0VSOPaVXunxIeQxSVSj+8tzrDdeHXivbvlcvg8G0tsA8K76s3QoQcPRzwNsEsUcE7lnVnTilumcfDAWQgODxNVqggjekQB5Q6bzXIOxzpzUiYzv8QGggMJTB/zz0KW4/5qQsbAaIxz/vfh16riii0LuLubfy/t/Ga5cRVYUKN22S5m5A5I4QeMjvD33NmOHGXfpyR7nbOa9z0mlSq1QTbzTj ssh-key-2023-03-07"
 
 import oci
 import logging
@@ -24,7 +23,7 @@ logging.basicConfig(
 
 ocpus = 1
 memory_in_gbs = 1
-wait_s_for_retry = 10
+wait_s_for_retry = 20
 
 logging.info("#####################################################")
 logging.info("Script to spawn VM.Standard.E2.1.Micro instance")
@@ -110,7 +109,7 @@ instance_detail = oci.core.models.LaunchInstanceDetails(
 )
 
 to_try = 1
-while to_try<360:
+while to_try<3600000000000000000000000000000000000000000000000000000000000000000000000000:
     try:
         to_launch_instance.launch_instance(instance_detail)
         to_try = False
